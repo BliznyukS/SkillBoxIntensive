@@ -10,6 +10,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 
+        int[] drinkPrices = {150, 80, 20, 30};
+        String[] drinkNames = {"Cappuccinos", "Americano", "Water", "Milk"};
+
+        System.out.println("Coffee Shop");
+        System.out.print("Please enter currency value - ");
+        int moneyAmount = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            moneyAmount = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Wrong value !");
+        }
+
+        CoffeeMachine coffeeMachine = new CoffeeMachine(drinkPrices, drinkNames);
+        coffeeMachine.checkPrices(moneyAmount);
+/*
         System.out.println("Coffee Shop");
         System.out.print("Please enter currency value - ");
 
@@ -57,5 +73,7 @@ public class Main {
         }
 
         //TODO: send to telegram chat with hashtag #ямолодец
+
+ */
     }
 }
